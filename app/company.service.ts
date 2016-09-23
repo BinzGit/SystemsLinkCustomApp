@@ -28,10 +28,7 @@ export class CompanyService {
       || CompanyService.token.expirationDate < new Date()
       || !CompanyService.token.valid)  
     {
-        tokenPromise = systemsLink.getToken(this.http);
-    }
-    else{
-      tokenPromise = Promise.resolve(CompanyService.token);
+     
     }
     
     var tokenValue;
@@ -73,10 +70,7 @@ export class CompanyService {
       || CompanyService.token.expirationDate < new Date()
       || !CompanyService.token.valid)  
       {
-          tokenPromise = systemsLink.getToken(this.http);
-      }
-      else{
-        tokenPromise = Promise.resolve(CompanyService.token);
+      
       }
     
     var tokenValue;

@@ -21,10 +21,7 @@ export class OrderService {
       || OrderService.token.expirationDate < new Date()
       || !OrderService.token.valid)  
     {
-        tokenPromise = systemsLink.getToken(this.http);
-    }
-    else{
-      tokenPromise = Promise.resolve(OrderService.token);
+      
     }
     
     var tokenValue;
