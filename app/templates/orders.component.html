@@ -1,0 +1,22 @@
+<table class="table table-striped table-bordered">
+<tr *ngFor="let order of orders">
+	<td>
+		 Bill To: {{order.billToName}}
+	</td>
+	<td>
+		 Shipper:  {{order.shipperName}} 
+	</td>
+	<td>
+		 Consignee:  {{order.consigneeName}} 
+	</td>
+	<td>
+		 Order Number: {{order.orderNumber}}  
+	</td>
+	<td>
+    Start Date:  {{order.startDate}}  
+	</td>
+	<td>
+    Completion Date:  {{order.completionDate}}   
+</td>
+</tr> 
+</table>

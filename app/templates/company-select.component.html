@@ -1,0 +1,42 @@
+
+<form [formGroup]="selectCompanyForm"   (ngSubmit)="onSubmit()">
+<div class="row">
+      <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div  [ngSwitch]="companyType">
+                                <h4 class="panel-title" *ngSwitchCase="billTo">Bill Tos</h4>
+                                <h4 class="panel-title" *ngSwitchCase="consignee">Consignees</h4>
+                                <h4 class="panel-title" *ngSwitchCase="shipper">Shippers</h4>
+                            </div>  
+                        </div >
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                 {{ formErrors.companyID }}
+                          </div>
+                        </div>
+                        <div class="row">                           
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                <select  formControlName="companyID" name="companies" >
+                                    <option *ngFor="let c of companies" [value]="c.companyID">{{c.companyName}}</option>
+                                </select>                               
+                            </div>                            
+                        </div >
+                        <div class="row">
+                     
+                            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                                <h4>&nbsp;</h4>
+                            <button class="btn-info orderSummary" type="button" (click)="gotoOrders()" [disabled]="!selectCompanyForm.valid" data-toggle="tooltip" title="{{ formErrors.companyID }}">See Orders</button>                    
+                            </div >
+
+                            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                <h4>&nbsp;</h4>
+                            <button class="btn-info orderSummary" type="submit" [disabled]="!selectCompanyForm.valid" data-toggle="tooltip" title="{{ formErrors.companyID }}">Company Detail</button>
+                            </div>
+                       </div>
+                </div>
+        </div>
+</div>
+</form>
