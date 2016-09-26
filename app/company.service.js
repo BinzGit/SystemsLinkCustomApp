@@ -39,10 +39,6 @@ System.register(['@angular/core', './company', '@angular/http', './systems-link'
                     if (!CompanyService.token
                         || CompanyService.token.expirationDate < new Date()
                         || !CompanyService.token.valid) {
-                        tokenPromise = systemsLink.getToken(this.http);
-                    }
-                    else {
-                        tokenPromise = Promise.resolve(CompanyService.token);
                     }
                     var tokenValue;
                     var companySearch = new CompanySearchModel();
@@ -71,10 +67,6 @@ System.register(['@angular/core', './company', '@angular/http', './systems-link'
                     if (!CompanyService.token
                         || CompanyService.token.expirationDate < new Date()
                         || !CompanyService.token.valid) {
-                        tokenPromise = systemsLink.getToken(this.http);
-                    }
-                    else {
-                        tokenPromise = Promise.resolve(CompanyService.token);
                     }
                     var tokenValue;
                     var companySearch = new CompanySearchModel();

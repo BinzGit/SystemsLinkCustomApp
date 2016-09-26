@@ -36,10 +36,6 @@ System.register(['@angular/core', '@angular/http', './systems-link', 'rxjs/add/o
                     if (!OrderService.token
                         || OrderService.token.expirationDate < new Date()
                         || !OrderService.token.valid) {
-                        tokenPromise = systemsLink.getToken(this.http);
-                    }
-                    else {
-                        tokenPromise = Promise.resolve(OrderService.token);
                     }
                     var tokenValue;
                     var orderSearch = new OrderSummarySearchModel();
